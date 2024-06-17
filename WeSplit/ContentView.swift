@@ -29,6 +29,12 @@ struct ContentView: View {
                             Text("\($0) people")
                         }
                     }
+                    
+                    Picker("Tip Percentage", selection: $tipPercentage) {
+                        ForEach(0..<5) {
+                            Text("\(tipPercentages[$0])%")
+                        }
+                    }
                 }
                 Section {
                     Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
